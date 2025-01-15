@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Python - From Zero to Hero</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <svg width="40" height="40" viewBox="0 0 256 255">
+        <defs>
+          <linearGradient x1="12.959%" y1="12.039%" x2="79.639%" y2="78.201%" id="a">
+            <stop stop-color="#387EB8" offset="0%"/>
+            <stop stop-color="#366994" offset="100%"/>
+          </linearGradient>
+          <linearGradient x1="19.128%" y1="20.579%" x2="90.742%" y2="88.429%" id="b">
+            <stop stop-color="#FFE052" offset="0%"/>
+            <stop stop-color="#FFC331" offset="100%"/>
+          </linearGradient>
+        </defs>
+        <path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z" fill="url(#a)"/>
+        <path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" fill="url(#b)"/>
+      </svg>
+      <span>Learn Python</span>
+    </div>
+    <div class="menu-toggle">☰</div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="lesson-list">
+        <h3>Course Contents</h3>
+        <ul>
+          <li><a href="#intro" class="active">Introduction to Python</a></li>
+          <li><a href="#variables">Variables & Data Types</a></li>
+          <li><a href="#control">Control Flow</a></li>
+          <li><a href="#functions">Functions</a></li>
+          <li><a href="#lists">Lists & Tuples</a></li>
+          <li><a href="#dictionaries">Dictionaries</a></li>
+          <li><a href="#loops">Loops</a></li>
+          <li><a href="#classes">Classes & Objects</a></li>
+          <li><a href="#modules">Modules & Packages</a></li>
+          <li><a href="#files">File Handling</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section id="intro" class="lesson active">
+        <h1>Introduction to Python</h1>
+        <div class="lesson-content">
+          <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It's perfect for beginners and powerful enough for experts.</p>
+          
+          <h2>Your First Python Program</h2>
+          <div class="code-example">
+            <pre><code class="python">print("Hello, World!")</code></pre>
+            <button class="run-code">Run Code</button>
+          </div>
+          <div class="code-output"></div>
+
+          <h2>Why Python?</h2>
+          <ul class="features">
+            <li>Easy to learn and read</li>
+            <li>Large standard library</li>
+            <li>Cross-platform compatibility</li>
+            <li>Great community support</li>
+            <li>Versatile applications</li>
+          </ul>
+
+          <div class="practice-section">
+            <h3>Practice Exercise</h3>
+            <p>Try writing a program that prints your name:</p>
+            <div class="code-editor">
+              <textarea class="python-code" placeholder="Write your code here..."></textarea>
+              <button class="check-answer">Check Answer</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Other sections will be dynamically loaded -->
+    </main>
+  </div>
+
+  <div class="console">
+    <div class="console-header">
+      <span>Python Console</span>
+      <button class="minimize-console">−</button>
+    </div>
+    <div class="console-content">
+      <div class="output-area"></div>
+      <input type="text" class="console-input" placeholder="Type Python code here...">
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pyodide/0.23.4/pyodide.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

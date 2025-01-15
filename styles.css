@@ -1,0 +1,250 @@
+:root {
+    --primary-color: #366994;
+    --secondary-color: #FFE052;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --sidebar-width: 250px;
+    --nav-height: 60px;
+    --console-height: 200px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .container {
+    display: flex;
+    margin-top: var(--nav-height);
+    min-height: calc(100vh - var(--nav-height));
+  }
+  
+  .sidebar {
+    width: var(--sidebar-width);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+  }
+  
+  .lesson-list ul {
+    list-style: none;
+  }
+  
+  .lesson-list a {
+    display: block;
+    padding: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .lesson-list a:hover,
+  .lesson-list a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+  
+  .content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 20px;
+    max-width: calc(100% - var(--sidebar-width));
+  }
+  
+  .lesson {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .lesson.active {
+    display: block;
+  }
+  
+  .code-example {
+    background-color: #282c34;
+    border-radius: 5px;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .code-example pre {
+    padding: 20px;
+    margin: 0;
+    overflow-x: auto;
+  }
+  
+  .run-code {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .run-code:hover {
+    background-color: #FFC331;
+  }
+  
+  .code-output {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    min-height: 40px;
+    display: none;
+  }
+  
+  .features {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+  
+  .practice-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .code-editor {
+    margin-top: 10px;
+  }
+  
+  .python-code {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: monospace;
+    resize: vertical;
+  }
+  
+  .check-answer {
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .console {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: var(--console-height);
+    background-color: #1e1e1e;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .console-header {
+    background-color: #333;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .minimize-console {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .console-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .output-area {
+    flex: 1;
+    overflow-y: auto;
+    font-family: monospace;
+    margin-bottom: 10px;
+  }
+  
+  .console-input {
+    background-color: #282c34;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-family: monospace;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+    }
+  
+    .sidebar.active {
+      transform: translateX(0);
+    }
+  
+    .content {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+  }
